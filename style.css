@@ -1,0 +1,1042 @@
+/* =================================
+   RESET
+================================= */
+
+* {
+
+    box-sizing: border-box;
+
+    margin: 0;
+
+    padding: 0;
+
+    font-family: Arial, sans-serif;
+
+}
+
+
+/* =================================
+   BODY
+================================= */
+
+body {
+
+    min-height: 100vh;
+
+    background:
+
+        linear-gradient(
+
+            135deg,
+
+            #0f172a,
+
+            #1e293b
+
+        );
+
+    color: white;
+
+}
+
+
+/* =================================
+   CONTAINER
+================================= */
+
+.container {
+
+    width: 95%;
+
+    max-width: 1400px;
+
+    margin: auto;
+
+    padding: 30px 0 50px;
+
+}
+
+
+/* =================================
+   HEADER
+================================= */
+
+header {
+
+    position: relative;
+
+    text-align: center;
+
+    margin-bottom: 30px;
+
+}
+
+
+header h1 {
+
+    font-family: Georgia, serif;
+
+    font-size: 42px;
+
+    letter-spacing: 3px;
+
+    font-weight: bold;
+
+}
+
+
+header p {
+
+    margin-top: 10px;
+
+    color: #cbd5e1;
+
+    font-size: 16px;
+
+}
+
+
+/* =================================
+   FULLSCREEN BUTTON
+================================= */
+
+#fullscreenButton {
+
+    position: fixed;
+
+    top: 20px;
+
+    right: 25px;
+
+    z-index: 1000;
+
+    padding: 10px 20px;
+
+    border: 1px solid rgba(
+
+        255,
+
+        255,
+
+        255,
+
+        0.3
+
+    );
+
+    border-radius: 25px;
+
+    background: rgba(
+
+        255,
+
+        255,
+
+        255,
+
+        0.1
+
+    );
+
+    color: white;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+
+#fullscreenButton:hover {
+
+    background: rgba(
+
+        255,
+
+        255,
+
+        255,
+
+        0.25
+
+    );
+
+    transform: scale(1.05);
+
+}
+
+
+/* =================================
+   MAIN
+================================= */
+
+main {
+
+    display: grid;
+
+    grid-template-columns: 1.5fr 1fr;
+
+    gap: 30px;
+
+}
+
+
+/* =================================
+   WHEEL SECTION
+================================= */
+
+.wheel-section {
+
+    background: rgba(
+
+        255,
+
+        255,
+
+        255,
+
+        0.08
+
+    );
+
+    border: 1px solid rgba(
+
+        255,
+
+        255,
+
+        255,
+
+        0.15
+
+    );
+
+    border-radius: 25px;
+
+    padding: 30px;
+
+    text-align: center;
+
+}
+
+
+/* =================================
+   WHEEL CONTAINER
+================================= */
+
+.wheel-container {
+
+    position: relative;
+
+    width: 600px;
+
+    max-width: 100%;
+
+    margin: auto;
+
+}
+
+
+/* =================================
+   WHEEL ROTATOR
+================================= */
+
+#wheelRotator {
+
+    width: 100%;
+
+    aspect-ratio: 1 / 1;
+
+    transform-origin: center center;
+
+}
+
+
+/* =================================
+   IDLE SPIN
+================================= */
+
+#wheelRotator.idle-spin {
+
+    animation:
+
+        idleSpin 12s linear infinite;
+
+}
+
+
+@keyframes idleSpin {
+
+    from {
+
+        transform: rotate(0deg);
+
+    }
+
+    to {
+
+        transform: rotate(360deg);
+
+    }
+
+}
+
+
+/* =================================
+   CANVAS
+================================= */
+
+#wheel {
+
+    display: block;
+
+    width: 100%;
+
+    height: 100%;
+
+    border-radius: 50%;
+
+    box-shadow:
+
+        0 0 0 10px white,
+
+        0 0 40px rgba(
+
+            0,
+
+            0,
+
+            0,
+
+            0.5
+
+        );
+
+}
+
+
+/* =================================
+   POINTER
+================================= */
+
+.pointer {
+
+    position: absolute;
+
+    top: -20px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    z-index: 20;
+
+    font-size: 55px;
+
+    color: #facc15;
+
+    text-shadow:
+
+        0 3px 5px black;
+
+}
+
+
+/* =================================
+   SPIN BUTTON
+================================= */
+
+#spinButton {
+
+    margin-top: 35px;
+
+    padding: 18px 55px;
+
+    border: none;
+
+    border-radius: 50px;
+
+    background:
+
+        linear-gradient(
+
+            135deg,
+
+            #facc15,
+
+            #f97316
+
+        );
+
+    color: #111827;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+
+#spinButton:hover {
+
+    transform: scale(1.05);
+
+}
+
+
+#spinButton:disabled {
+
+    opacity: 0.5;
+
+    cursor: not-allowed;
+
+}
+
+
+/* =================================
+   WINNER DISPLAY
+================================= */
+
+#winner {
+
+    margin-top: 25px;
+
+    padding: 20px;
+
+    border-radius: 15px;
+
+    background: rgba(
+
+        255,
+
+        255,
+
+        255,
+
+        0.1
+
+    );
+
+    font-size: 22px;
+
+    font-weight: bold;
+
+    color: #facc15;
+
+}
+
+
+/* =================================
+   LIST SECTION
+================================= */
+
+.list-section {
+
+    background: rgba(
+
+        255,
+
+        255,
+
+        255,
+
+        0.08
+
+    );
+
+    border: 1px solid rgba(
+
+        255,
+
+        255,
+
+        255,
+
+        0.15
+
+    );
+
+    border-radius: 25px;
+
+    padding: 25px;
+
+}
+
+
+/* =================================
+   LIST HEADER
+================================= */
+
+.list-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 20px;
+
+}
+
+
+.list-header h2,
+
+.selected-title {
+
+    font-size: 20px;
+
+}
+
+
+#companyCount {
+
+    background: #facc15;
+
+    color: #111827;
+
+    padding: 6px 12px;
+
+    border-radius: 20px;
+
+    font-weight: bold;
+
+    font-size: 13px;
+
+}
+
+
+/* =================================
+   COMPANY LIST
+================================= */
+
+#companiesList {
+
+    max-height: 430px;
+
+    overflow-y: auto;
+
+}
+
+
+.company-item {
+
+    padding: 13px 15px;
+
+    margin-bottom: 8px;
+
+    border-radius: 10px;
+
+    background: rgba(
+
+        255,
+
+        255,
+
+        255,
+
+        0.08
+
+    );
+
+    font-size: 13px;
+
+    transition: 0.3s;
+
+}
+
+
+.company-item:hover {
+
+    background: rgba(
+
+        255,
+
+        255,
+
+        255,
+
+        0.18
+
+    );
+
+}
+
+
+/* =================================
+   SELECTED COMPANY
+================================= */
+
+.selected-title {
+
+    margin-top: 30px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.selected-item {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 12px;
+
+    margin-bottom: 8px;
+
+    border-radius: 10px;
+
+    background: rgba(
+
+        34,
+
+        197,
+
+        94,
+
+        0.2
+
+    );
+
+    border-left: 4px solid #22c55e;
+
+    font-size: 13px;
+
+}
+
+
+/* =================================
+   DELETE BUTTON
+================================= */
+
+.delete-btn {
+
+    border: none;
+
+    padding: 6px 10px;
+
+    border-radius: 6px;
+
+    background: #ef4444;
+
+    color: white;
+
+    cursor: pointer;
+
+}
+
+
+.delete-btn:hover {
+
+    background: #dc2626;
+
+}
+
+
+/* =================================
+   EMPTY
+================================= */
+
+.empty {
+
+    color: #94a3b8;
+
+    text-align: center;
+
+    padding: 15px;
+
+}
+
+
+/* =================================
+   WINNER MODAL
+================================= */
+
+.winner-modal {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 500;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background:
+
+        rgba(
+
+            0,
+
+            0,
+
+            0,
+
+            0.75
+
+        );
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition: 0.3s;
+
+}
+
+
+.winner-modal.show {
+
+    opacity: 1;
+
+    visibility: visible;
+
+}
+
+
+.winner-box {
+
+    width: min(
+
+        850px,
+
+        90%
+
+    );
+
+    padding: 55px 40px;
+
+    text-align: center;
+
+    border-radius: 30px;
+
+    background:
+
+        linear-gradient(
+
+            135deg,
+
+            #1e293b,
+
+            #0f172a
+
+        );
+
+    border: 3px solid #facc15;
+
+    box-shadow:
+
+        0 0 50px rgba(
+
+            250,
+
+            204,
+
+            21,
+
+            0.5
+
+        );
+
+    transform: scale(0.5);
+
+    transition: 0.4s;
+
+}
+
+
+.winner-modal.show .winner-box {
+
+    transform: scale(1);
+
+}
+
+
+.winner-box.main-prize {
+
+    border-color: #facc15;
+
+    box-shadow:
+
+        0 0 80px rgba(
+
+            250,
+
+            204,
+
+            21,
+
+            0.8
+
+        );
+
+}
+
+
+.winner-label {
+
+    color: #facc15;
+
+    font-size: 28px;
+
+    font-weight: bold;
+
+    margin-bottom: 25px;
+
+}
+
+
+.winner-name {
+
+    font-size: clamp(
+
+        28px,
+
+        5vw,
+
+        65px
+
+    );
+
+    font-weight: bold;
+
+    line-height: 1.2;
+
+    color: white;
+
+}
+
+
+.close-winner {
+
+    margin-top: 35px;
+
+    padding: 12px 30px;
+
+    border: none;
+
+    border-radius: 25px;
+
+    background: #facc15;
+
+    color: #111827;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+}
+
+
+/* =================================
+   CONFETTI
+================================= */
+
+#confettiCanvas {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 600;
+
+    pointer-events: none;
+
+}
+
+
+/* =================================
+   FULLSCREEN MODE
+================================= */
+
+body.fullscreen-mode {
+
+    background:
+
+        radial-gradient(
+
+            circle at center,
+
+            #1e293b,
+
+            #020617
+
+        );
+
+}
+
+
+body.fullscreen-mode .container {
+
+    width: 100%;
+
+    max-width: 100%;
+
+    padding: 20px;
+
+}
+
+
+body.fullscreen-mode main {
+
+    display: block;
+
+}
+
+
+body.fullscreen-mode .wheel-section {
+
+    min-height:
+
+        calc(
+
+            100vh - 170px
+
+        );
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background: transparent;
+
+    border: none;
+
+    padding: 0;
+
+}
+
+
+body.fullscreen-mode .wheel-container {
+
+    width: min(
+
+        75vh,
+
+        75vw
+
+    );
+
+}
+
+
+body.fullscreen-mode #wheel {
+
+    box-shadow:
+
+        0 0 0 12px white,
+
+        0 0 60px rgba(
+
+            0,
+
+            0,
+
+            0,
+
+            0.8
+
+        );
+
+}
+
+
+body.fullscreen-mode #spinButton {
+
+    font-size: 22px;
+
+    padding: 20px 70px;
+
+}
+
+
+body.fullscreen-mode #winner {
+
+    font-size: 30px;
+
+    padding: 25px 40px;
+
+    min-width: 60%;
+
+}
+
+
+body.fullscreen-mode .list-section {
+
+    display: none;
+
+}
+
+
+body.fullscreen-mode header h1 {
+
+    font-size: 48px;
+
+}
+
+
+body.fullscreen-mode header p {
+
+    font-size: 18px;
+
+}
+
+
+/* =================================
+   RESPONSIVE
+================================= */
+
+@media (max-width: 1000px) {
+
+    main {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    header h1 {
+
+        font-size: 25px;
+
+    }
+
+
+    .wheel-section {
+
+        padding: 20px 10px;
+
+    }
+
+
+    #winner {
+
+        font-size: 17px;
+
+    }
+
+}
