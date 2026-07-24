@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>BCA Gathering</title>
+
+    <link rel="stylesheet"
+        href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- CONFETTI -->
+
+    <canvas id="confettiCanvas"></canvas>
+
+
+    <div class="container">
+
+
+        <!-- HEADER -->
+
+        <header>
+
+            <h1>
+                BCA GATHERING
+            </h1>
+
+
+            <p>
+                Bank Notes Knowledge Money Changer Bali 2026
+            </p>
+
+
+            <button
+                id="fullscreenButton"
+                onclick="toggleFullscreen()">
+
+                ⛶ FULLSCREEN
+
+            </button>
+
+        </header>
+
+
+        <!-- MAIN -->
+
+        <main>
+
+
+            <!-- WHEEL SECTION -->
+
+            <section class="wheel-section">
+
+
+                <div class="wheel-container">
+
+
+                    <!-- POINTER -->
+
+                    <div class="pointer">
+
+                        ▼
+
+                    </div>
+
+
+                    <!-- PEMBUNGKUS RODA -->
+
+                    <div id="wheelRotator">
+
+
+                        <!-- RODA -->
+
+                        <canvas
+                            id="wheel"
+                            width="600"
+                            height="600">
+
+                        </canvas>
+
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- TOMBOL PUTAR -->
+
+                <button
+                    id="spinButton"
+                    onclick="spinWheel()">
+
+                    🎡 PUTAR RODA
+
+                </button>
+
+
+                <!-- PEMENANG -->
+
+                <div id="winner">
+
+                    Siapakah yang akan terpilih?
+
+                </div>
+
+
+            </section>
+
+
+            <!-- DAFTAR COMPANY -->
+
+            <section class="list-section">
+
+
+                <div class="list-header">
+
+
+                    <h2>
+
+                        🎯 DAFTAR PESERTA UNDIAN
+
+                    </h2>
+
+
+                    <span id="companyCount">
+
+                        23 Company
+
+                    </span>
+
+
+                </div>
+
+
+                <div id="companiesList">
+
+                </div>
+
+
+                <!-- COMPANY TERPILIH -->
+
+                <h2 class="selected-title">
+
+                    🏆 COMPANY TERPILIH
+
+                </h2>
+
+
+                <div id="selectedList">
+
+
+                    <p class="empty">
+
+                        Belum ada company terpilih
+
+                    </p>
+
+
+                </div>
+
+
+            </section>
+
+
+        </main>
+
+
+    </div>
+
+
+    <!-- POPUP PEMENANG -->
+
+    <div
+        id="winnerModal"
+        class="winner-modal">
+
+
+        <div
+            id="winnerBox"
+            class="winner-box">
+
+
+            <div
+                id="winnerLabel"
+                class="winner-label">
+
+                PEMENANG UNDIAN
+
+            </div>
+
+
+            <div
+                id="winnerModalName"
+                class="winner-name">
+
+            </div>
+
+
+            <button
+                class="close-winner"
+                onclick="closeWinnerModal()">
+
+                TUTUP
+
+            </button>
+
+
+        </div>
+
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>
