@@ -918,7 +918,7 @@ body.fullscreen-mode header {
     align-items: center;
     margin-bottom: 10px;
 
-    transform: translateX(25px)
+    transform: translateX(0px)
 }
 
 body.fullscreen-mode header h1 {
